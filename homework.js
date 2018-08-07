@@ -140,4 +140,12 @@ function createUsers (names,dates){
 // You do not have to handle the situation in which the current date is before
 // a user's date of birth.
 
-function averageAge (users,Date)
+function averageAge (users,Date){
+  var ages = []
+  for (var user of users){
+    user.age = calculateAge(user,Date)
+    ages.push(user.age)
+  }
+  var avAge = average(ages)
+  return avAge  
+  }
